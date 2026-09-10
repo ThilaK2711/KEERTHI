@@ -14,7 +14,7 @@ const careCards = [
 ]
 
 // Replace with your Formspree endpoint after creating a free form.
-const feedbackEndpoint = 'https://formspree.io/f/YOUR_FORM_ID'
+const feedbackEndpoint = 'https://formspree.io/f/xqpkwnzr'
 
 // Easy to edit: these notes become the interactive birthday reveal.
 const littleThings = [
@@ -127,13 +127,12 @@ function App() {
         </div>
       </section>
       <section className="note-section section-shell">
-        <div className="section-kicker">05 <span /> a small open door</div><h2>Leave A Little<br /><i>Note</i> <span>♡</span></h2><p className="section-intro">Want to send a birthday message back? This is completely optional — your details are only used to reply.</p>
+        <div className="section-kicker">05 <span /> a private reply</div><h2>A Note <i>For Me</i> <span>♡</span></h2><p className="section-intro">Keerthi, if you would like to reply, your message will come directly to me. This little space is just for you.</p>
         <form className="feedback-form" onSubmit={submitFeedback}>
-          <label>Your name<input name="name" type="text" placeholder="Your name" required /></label>
-          <label>Your email<input name="email" type="email" placeholder="you@example.com" required /></label>
-          <label className="full-field">Your message<textarea name="message" rows="4" placeholder="Write something lovely..." required /></label>
-          <label className="consent"><input name="consent" type="checkbox" required /> <span>I agree to share my email so Keerthi can reply.</span></label>
-          <button className="note-button" type="submit">send the note <b>↗</b></button>
+          <input name="from" type="hidden" value="Keerthi" />
+          <label className="full-field">Your private message<textarea name="message" rows="5" placeholder="Write anything you would like to say..." required /></label>
+          <p className="private-note">♡ This message is intended only for the person who made this page.</p>
+          <button className="note-button" type="submit">send my private reply <b>↗</b></button>
           {feedbackStatus && <p className="feedback-status" role="status">{feedbackStatus}</p>}
         </form>
       </section>
